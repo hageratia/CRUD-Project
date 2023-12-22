@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Project</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container py-4 w-75">
+        <div class="mb-3">
+            <label for="pName" class="mb-1 text-info ">Product Name :</label>
+            <input class="form-control mb-3 " type="text" name="pName" id="pName">
+            <span class="text-danger d-none" id="nameError">Invalid product name</span>
+        </div>
+        <div class="mb-3">
+            <label for="pPrice" class="mb-1 text-info ">Product Price :</label>
+            <input class="form-control mb-3 " type="text" name="pPrice" id="pPrice">
+            <span class="text-danger d-none" id="priceError">Invalid product price</span>
+        </div>
+        <div class="mb-3">
+            <label for="pCategory" class="mb-1 text-info ">Product Category :</label>
+            <input class="form-control mb-3 " type="text" name="pCategory" id="pCategory">
+            <span class="text-danger d-none" id="categoryError">Invalid product category</span>
+        </div>
+        <div class="mb-3">
+            <label for="pDesc" class="mb-1 text-info ">Product Describtion :</label>
+            <textarea name="pDesc" id="pDesc" class="form-control mb-3 "></textarea>
+            <span class="text-danger d-none" id="descError">Invalid product description</span>
+        </div>
+        <button id="addBtn" class="btn btn-info w-100 text-white d-block " onclick="addProduct()">ADD PRODUCT</button>
+        <button id="updateBtn" onclick="updateProduct()" class="btn btn-warning w-100 text-white mt-2 d-none text-white ">Update PRODUCT</button>
+
+    </div>
+    <div class="w-75 mx-auto  my-3 d-block">
+        <input type="text" class="w-75 my-3 mx-auto form-control" id="psearch" oninput="searchProducts()" placeholder="search by name ..">
+        <table class="table text-center " id="tb">
+            <thead>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Describtion</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
